@@ -19,9 +19,8 @@ async function getUsers(name){
 
 		if (name == result[x1].name) {
             let parent = document.querySelector('#demo2 ');
-            let p = document.createElement('p');
-            // p.innerHTML = '!';
-            parent.appendChild(p);
+            let div = document.createElement('div');
+            parent.appendChild(div);
            document.getElementById("demo2").innerHTML += result[x1].id+' '+result[x1].name +'; ';
 		}
    }  
@@ -42,6 +41,10 @@ async function zadanie3(){
     let result = await fetch('https://test-todoist.herokuapp.com/api/categories').then(response =>response.json()) 
     console.log("Задача 3а",result); 
 	for (const x3 in result) {
+        let parent3 = document.querySelector('#demo3 ');
+        let div = document.createElement('div');
+        parent3.appendChild(div); 
+
            document.getElementById("demo3").innerHTML += 'id: ' + result[x3].id +  ', '   +  'name: ' +  result[x3].name +'; ';		
    }  
     result.forEach(element => { 
